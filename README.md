@@ -1,5 +1,7 @@
 # 🔍 PCB Defect Detection Suite
 
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ranum18-defect-detector.streamlit.app)
+
 An end-to-end Computer Vision project featuring an automated training pipeline, a local inspection gallery, and a live Web UI. The system uses a **ResNet18** architecture to identify hand-drawn defects on 450x450px board images.
 
 ---
@@ -31,7 +33,7 @@ This project features a "Self-Healing" pipeline via GitHub Actions. Every push t
 
 ```bash
 # Clone the repository
-git clone [https://github.com/YOUR_USERNAME/defect-detector.git](https://github.com/YOUR_USERNAME/defect-detector.git)
+git clone [https://github.com/ranum18/defect-detector.git](https://github.com/ranum18/defect-detector.git)
 cd defect-detector
 
 # Install dependencies

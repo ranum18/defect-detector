@@ -8,7 +8,7 @@ from PIL import Image
 if not os.path.exists("defect_model.pth"):
     st.info("First time setup: Training the AI model... please wait.")
     import train_and_test 
-    train_and_test.train_model() # Make sure this function name matches yours
+    train_and_test.train_system() # Make sure this function name matches yours
     st.success("Training complete!")
 
 # 2. Now import the model and transform from your app logic
