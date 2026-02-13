@@ -1,8 +1,18 @@
 import streamlit as st
 import torch
-import cv2
+import os
 import numpy as np
 from PIL import Image
+
+# 1. Check if model exists, if not, train it!
+if not os.path.exists("defect_model.pth"):
+    st.info("First time setup: Training the AI model... please wait.")
+    import train_and_test 
+    train_and_test.train_model() # Make sure this function name matches yours
+    st.success("Training complete!")
+
+# 2. Now import the model and transform from your app logic
+from app import model, transform
 from app import model, transform 
 
 st.set_page_config(page_title="AI Detector", layout="centered")
