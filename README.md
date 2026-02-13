@@ -1,19 +1,23 @@
-# Defect Detector
+# Detect Defects
 
-This project uses OpenCV and PyTorch to inspect images for defects.
+Simple CI/CD demo project for image defect detection.
 
-## Features
+## Run locally
 
-- Image preprocessing
-- Defect classification
-- Automated testing with GitHub Actions
-- Docker container support
+pip install -r requirements.txt
+pytest
 
-## How to Run
+## Run with Docker
 
-Install dependencies:
+docker build -t detect-defects .
+docker run detect-defects
 
-Run tests:
+## CI/CD
+
+GitHub Actions automatically:
+
+- Builds Docker image
+- Runs tests
 
 ## Author
 
