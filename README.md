@@ -1,19 +1,54 @@
-# AI Defect Detector (COCO Edition)
+🔍 AI-Powered Defect Detector
+A complete computer vision pipeline that uses Transfer Learning (ResNet18) to detect hand-drawn defects in BMP images. This project includes an automated training pipeline and an interactive visualizer.
 
-Simple CI/CD project using PyTorch and OpenCV.
+🚀 Key Features
+Automated Training: Uses PyTorch to fine-tune a ResNet18 model on your custom BMP dataset.
 
-## Structure
+Interactive Gallery: A desktop UI built with OpenCV to cycle through images using the spacebar.
 
-- `app.py`: Image processing logic.
-- `model.py`: PyTorch model loading.
-- `tests/`: Automated unit tests.
+CI/CD Integration: GitHub Actions automatically trains the model and runs tests on every push.
 
-## Setup
+Hidden Image Validation: Evaluates model performance on a "secret" test set to ensure accuracy.
 
-1. `python -m venv .venv`
-2. `source .venv/bin/activate`
-3. `pip install -r requirements.txt`
-4. `python -m pytest`
+🛠️ Setup & Installation
+Clone the repo:
+
+Bash
+git clone https://github.com/YOUR_USERNAME/defect-detector.git
+cd defect-detector
+Create a Virtual Environment:
+
+Bash
+python -m venv .venv
+
+# Windows:
+
+.venv\Scripts\activate
+
+# Mac/Linux:
+
+source .venv/bin/activate
+Install Dependencies:
+
+Bash
+pip install -r requirements.txt
+💻 How to Use
+
+1. Training the AI
+   To train the model on your images (3 clean, 6 defective), run:
+
+Bash
+python train_and_test.py
+This will generate defect_model.pth. Note: This file is ignored by Git to keep the repository light.
+
+2. Interactive Gallery
+   To see the AI in action and cycle through the hidden test images:
+
+Bash
+python app.py
+SPACEBAR: Next Image
+
+ESC: Exit Program
 
 ## Author
 
