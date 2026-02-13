@@ -20,3 +20,10 @@ __pycache__/
 
 # Pytest cache
 .pytest_cache/
+
+#ignore trained models
+*.pth
+
+#ignore any temporary results or hidden OS files
+.DS_Store
+Thumbs.db
