@@ -1,55 +1,39 @@
-🔍 AI-Powered Defect Detector
-A complete computer vision pipeline that uses Transfer Learning (ResNet18) to detect hand-drawn defects in BMP images. This project includes an automated training pipeline and an interactive visualizer.
+# 🔍 PCB Defect Detection Suite
 
-🚀 Key Features
-Automated Training: Uses PyTorch to fine-tune a ResNet18 model on your custom BMP dataset.
+An end-to-end Computer Vision project featuring an automated training pipeline, a local inspection gallery, and a live Web UI. The system uses a **ResNet18** architecture to identify hand-drawn defects on 450x450px board images.
 
-Interactive Gallery: A desktop UI built with OpenCV to cycle through images using the spacebar.
+---
 
-CI/CD Integration: GitHub Actions automatically trains the model and runs tests on every push.
+## 🌐 Live Web Interface
 
-Hidden Image Validation: Evaluates model performance on a "secret" test set to ensure accuracy.
+The project includes a **Streamlit** web application that allows users to upload their own images to test the model in real-time.
 
-🛠️ Setup & Installation
-Clone the repo:
+- **Upload:** Supports BMP, JPG, and PNG formats.
+- **Processing:** Automatically resizes and normalizes any image size to $224 \times 224$ for the AI.
+- **Side-by-Side Analysis:** View the original image and the AI's confidence score simultaneously.
 
-Bash
-git clone https://github.com/YOUR_USERNAME/defect-detector.git
+---
+
+## ⚙️ Automated Pipeline (CI/CD)
+
+This project features a "Self-Healing" pipeline via GitHub Actions. Every push triggers:
+
+1.  **Environment Setup:** Python 3.9 environment with `pip` caching for high-speed builds.
+2.  **Automated Training:** The model is retrained from scratch (model weights are ignored by Git to keep the repo light).
+3.  **Rigorous Testing:** `pytest` evaluates the new model against a hidden test set.
+    - **Accuracy Requirement:** The build will fail if the model scores below **66%** on new images.
+
+---
+
+## 🛠️ Installation & Usage
+
+### 1. Setup
+
+```bash
+# Clone the repository
+git clone [https://github.com/YOUR_USERNAME/defect-detector.git](https://github.com/YOUR_USERNAME/defect-detector.git)
 cd defect-detector
-Create a Virtual Environment:
 
-Bash
-python -m venv .venv
-
-# Windows:
-
-.venv\Scripts\activate
-
-# Mac/Linux:
-
-source .venv/bin/activate
-Install Dependencies:
-
-Bash
+# Install dependencies
 pip install -r requirements.txt
-💻 How to Use
-
-1. Training the AI
-   To train the model on your images (3 clean, 6 defective), run:
-
-Bash
-python train_and_test.py
-This will generate defect_model.pth. Note: This file is ignored by Git to keep the repository light.
-
-2. Interactive Gallery
-   To see the AI in action and cycle through the hidden test images:
-
-Bash
-python app.py
-SPACEBAR: Next Image
-
-ESC: Exit Program
-
-## Author
-
-Anum Rehman
+```
